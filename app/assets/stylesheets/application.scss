@@ -28,9 +28,39 @@ nav {
 .form-control {
 	position: relative;
 	justify-content: center;
-	 left: 50%;
-	 // left: calc(50% + 200px);
+	left: 50%;
 	height: 26px;
 	width: 173px;
 	text-align: center;
+}
+
+.card {
+	width:600px;
+	height: 900px;
+	
+}
+
+.img-tag {
+	width: 600px;
+	height: 600px;
+
+}
+
+.la {
+	width: 700px;
+	position: absolute;
+	right: 27%
+}
+
+.account-sum{
+	text-align: left;
+}
+
+.l1 {
+	margin-left: 20%;
+}
+
+.ti {
+	margin-left: 92px;
+	margin-top: 7%;
 }
