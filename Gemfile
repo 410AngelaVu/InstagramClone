@@ -23,11 +23,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
-# image uploads to Amazon S3
-gem 'carrierwave'
-gem 'fog', '~> 2.2'
 # image resizing
 gem 'mini_magick', '~> 4.11'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -47,6 +45,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
+  # local ENV var for Heroku
+gem "figaro"
 end
 
 group :test do
