@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="row">
+		<div class="col-8">
+<% "#{@posts.size.to_s} posts found" %><br>
+<% @posts.each do |post| %>
+<div>
+<%= @post.account.username %>
+</div>
+<%= post.title %>
+<%= image_tag(post.image) %>
+<%= post.description %>
+<% end %>
+</div>
+</div>
+</div>

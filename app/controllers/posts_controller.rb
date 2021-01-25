@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-def index
-	@posts = Post.all.order('created_at DESC')
-end
+# def index
+# 	@posts = Post.all.order('created_at DESC')
+# end
 
 def show
 @post = Post.find(params[:id])
@@ -13,8 +13,9 @@ end
 
 def create
 @post = current_account.posts.build(post_params)
+@post.account_id = current_account.id if account_signed_in?
 if @post.save
-	redirect_to @post
+	redirect_to dashboard_path
 else
 	render 'new'
 end
