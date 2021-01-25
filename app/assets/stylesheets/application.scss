@@ -18,8 +18,19 @@
 nav {
 	background-color: white;
 	border-bottom: 1px solid #DBDBDB;
+	height: 48px;
 }
 
 .logo {
 	width: 100px;
+}
+
+.form-control {
+	position: relative;
+	justify-content: center;
+	 left: 50%;
+	 // left: calc(50% + 200px);
+	height: 26px;
+	width: 173px;
+	text-align: center;
 }

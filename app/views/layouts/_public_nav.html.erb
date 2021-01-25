@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="https://logos-world.net/wp-content/uploads/2020/04/Instagram-Logo.png" alt="" class='logo'></a>
+          <form class="input">
+      
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </form>
+
+  
+    <div class="float-right">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          
+            <%= link_to dashboard_path, class:'nav-link' do %>
+           <i class="fas fa-home"></i>
+            <% end %>
+          
+        </li>
+        <li class="nav-item">
+           <%= link_to dashboard_path, class:'nav-link' do %>
+          <i class="fas fa-location-arrow"></i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+           <%= link_to dashboard_path, class:'nav-link' do %>
+          <i class="far fa-compass"></i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+           <%= link_to dashboard_path, class:'nav-link' do %>
+          <i class="far fa-heart"></i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+           <%= link_to dashboard_path, class:'nav-link' do %>
+          <i class="far fa-user"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+ </div>
+</nav>
