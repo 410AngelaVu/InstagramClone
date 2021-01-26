@@ -1,18 +1,24 @@
 class AccountsController < ApplicationController
 before_action :authenticate_account!
-before_action :set_account, only: [:profile]
-def index
+before_action :set_account, only: [:show]
+
 #user feed(dashboard will be feed)
-@posts = Post.active
+def index
+	@posts = Post.active
+	
 end
 
-# def show
-def profile
 #user profile
+def show
+	
 end 
 
 def set_account
 @account = Account.find_by_username(params[:username])
-end
+	end
+
+# def account_params
+# params.require(:account).permit(:username, :first_name, :last_name, :email,:password)
+# end
 
 end
