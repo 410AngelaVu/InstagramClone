@@ -10,14 +10,18 @@
   </div>
  <%= image_tag(post.image, :class => 'img-tag') if post.image.attached? %>
   <div class="card-body">
-    <h5 class="card-title"><%= post.title %></h5>
-    <p class="card-text"><%= post.description %></p>
+    <h5 class="card-title"><i class="far fa-heart srce fa-lg"></i>
+      <i class="far fa-comment fa-lg"></i>
+      <i class="fas fa-location-arrow strela fa-lg"></i>
+      <i class="far fa-bookmark float-right fa-lg"></i>
+    </h5>
+     <p class="card-text d-inline">
+      <strong><%= post.total_likes %> likes</strong></p><br>
+  <strong><%= link_to post.account.username, show_path(post.account.username), class:'text-dark' %></strong>
+  <p class="card-text d-inline mx-2"> <%= post.description %></p>
+  <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-  </ul>
+  
   <div class="card-body">
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
@@ -27,13 +31,15 @@
  </div> 
 <div class="col ti">
 	<div class="account-sum">
-		<strong><p><%= current_account.username %></p></strong>
-		<p><%= current_account.full_name %></p>
-	</div>
+    <%= image_tag(current_account.image, class:'img-sum') unless current_account.image.blank? %>
+		<p class='p-sum'><strong><%= current_account.username %></strong><br>
+	    <%= current_account.full_name %></p>
+	</div><br>
 	<div class="follower-suggestion">
 		<div class="card di">
   <div class="card-header s">
-    Suggestions For You
+    <p class="float-right">See All</p>
+    <p class="text-muted">Suggestions For You</p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">An item</li>
