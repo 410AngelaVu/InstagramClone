@@ -6,11 +6,12 @@ before_action :set_account, only: [:show]
 def index
 	@posts = Post.all.order('created_at DESC').active
 	
+	
 end
 
 #user profile
 def show
-# @account = Account.find(params[:username])
+@posts = @account.posts.active
 end 
 
 def set_account

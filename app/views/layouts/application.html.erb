@@ -12,7 +12,9 @@
   </head>
 
   <body>
+    <% if account_signed_in? %>
     <%= render 'layouts/public_nav' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

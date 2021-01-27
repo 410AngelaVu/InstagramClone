@@ -1,12 +1,14 @@
 <br><div class="container">
 <div class="row">
 <div class="col l1">
-<% @posts.each do |post| %><br><br>
+   <% @posts.each do |post| %><br><br>
 <div class="card">
 	<div class="card-header">
-    Featured
+    <%= image_tag(post.account.image, class:'dash-img') unless post.account.blank? %>
+   <%= link_to post.account.username, show_path(post.account.username), class:'link-name' unless post.account.blank? %>
+   <i class="fas fa-ellipsis-h float-right"></i>
   </div>
- <%= image_tag(post.image, :class => 'img-tag') %>
+ <%= image_tag(post.image, :class => 'img-tag') if post.image.attached? %>
   <div class="card-body">
     <h5 class="card-title"><%= post.title %></h5>
     <p class="card-text"><%= post.description %></p>

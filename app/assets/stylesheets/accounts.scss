@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .tool {
-	width: 221px;
+	width: 199px;
 	border-radius: 50%;
-	height: 213px;
+	height: 189px;
 }
 
 .profile-stats {
@@ -14,3 +14,34 @@
 .ac-show {
 	padding-top: 85px;
 }
+
+.profile-img {
+	width: 311px;
+	height: 315px;
+}
+
+.profile-post {
+	margin-top: 175px;
+}
+
+.dash-img {
+	border-radius: 50%;
+	width: 43px;
+	height: 39px;
+	margin-top: -3px;
+	margin-left: -8px;
+}
+
+.link-name{
+	margin-left: 10px;
+	color: black;
+}
+
+.link-name:hover {
+	color: black;
+}
+
+.fa-ellipsis-h{
+	margin-top: 10px;
+}
+

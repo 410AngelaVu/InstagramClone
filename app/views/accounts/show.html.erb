@@ -13,6 +13,15 @@
 		<p><%= link_to @account.website if @account.website.present? %></p>
 			</div>
 		</div>
+		<div class="row profile-post">
+			
+				<% @posts.each do |post| %>
+					<div class="col-4"><br>
+						<%= image_tag(post.image, class:'profile-img') if post.image.attached? %>
+					</div>
+				<% end %>
+			
+		</div>
 	</div>
 
 
