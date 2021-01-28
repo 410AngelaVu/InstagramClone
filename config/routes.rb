@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   devise_for :accounts
   get '/dashboard' => 'accounts#index'
   get 'show/:username' => 'accounts#show', as: :show 
-  get 'post/like/:post_id' => 'likes#save_like', as: :like_post
-  resources :posts
+
+  resources :posts do 
+resources :likes, only: [:create, :destroy]
+  end
+  
+ 
 end

@@ -10,13 +10,20 @@
   </div>
  <%= image_tag(post.image, :class => 'img-tag') if post.image.attached? %>
   <div class="card-body">
-    <h5 class="card-title"><i class="far fa-heart srce fa-lg"></i>
-      <i class="far fa-comment fa-lg"></i>
+    <h5 class="card-title">
+     
+      <%= link_to post_likes_path(post.id), method: :post do %>
+      <i class="far fa-heart srce fa-lg"></i>
+      <% end %>
+      
+
+      
+     <i class="far fa-comment fa-lg"></i>
       <i class="fas fa-location-arrow strela fa-lg"></i>
       <i class="far fa-bookmark float-right fa-lg"></i>
     </h5>
      <p class="card-text d-inline">
-      <strong><%= post.total_likes %> likes</strong></p><br>
+      <strong><%= post.total_likes_count %> likes</strong></p><br>
   <strong><%= link_to post.account.username, show_path(post.account.username), class:'text-dark' %></strong>
   <p class="card-text d-inline mx-2"> <%= post.description %></p>
   <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>

@@ -55,10 +55,19 @@
 .strela {
 	padding-left: 12px;
 	margin-top: 10px;
+	cursor: pointer;
 }
 
 .srce {
 	margin-left: -17px;
+}
+
+.srce.love {
+	color: red;
+}
+
+.srce:hover {
+	color: red;
 }
 
 .p-sum {
