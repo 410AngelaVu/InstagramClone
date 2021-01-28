@@ -1,0 +1,13 @@
+<% @follower_suggestions.each do |account| %>
+<div class="recommended-follower">
+	<div class="row">
+		<div class="col-3">
+	<%= link_to image_tag(account.image, class:'lil-img'), show_path(account.username) unless account.image.blank? %>
+</div>
+<div class="col-9">
+	<%= link_to account.username, show_path(account.username), class:'link-name1 font-weight-bold' unless account.username.blank? %>
+	<p class="text-muted link-name1"><%= account.created_at > 3.days.ago ? "New To Instagram" : "Followed by X users" %></p>
+</div>
+</div>
+</div>
+<% end %>

@@ -5,6 +5,7 @@ before_action :set_account, only: [:show]
 #user feed(dashboard will be feed)
 def index
 	@posts = Post.all.order('created_at DESC').active
+	@follower_suggestions = Account.where.not(id: current_account.id)
 	
 	
 end

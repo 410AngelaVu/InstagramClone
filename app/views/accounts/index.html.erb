@@ -11,12 +11,17 @@
  <%= image_tag(post.image, :class => 'img-tag') if post.image.attached? %>
   <div class="card-body">
     <h5 class="card-title">
-     
-      <%= link_to post_likes_path(post.id), method: :post do %>
+      <% like = Like.find_by(post: post, account: current_account) %>
+     <% if like %>
+      <%= link_to post_like_path(id: like.id, post_id: post.id), method: :delete do %>
+
       <i class="far fa-heart srce fa-lg"></i>
       <% end %>
-      
-
+      <% else %>
+            <%= link_to post_likes_path(post.id), method: :post do %>
+      <i class="far fa-heart srce fa-lg"></i>
+        <% end %>
+        <% end %>
       
      <i class="far fa-comment fa-lg"></i>
       <i class="fas fa-location-arrow strela fa-lg"></i>
@@ -48,11 +53,9 @@
     <p class="float-right">See All</p>
     <p class="text-muted">Suggestions For You</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-  </ul>
+  <div class="card-body">
+   <%= render "accounts/follower-suggestions" %>
+ </div>
 </div>
 	</div>
 </div>
