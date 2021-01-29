@@ -4,7 +4,7 @@
 			 <%= image_tag(@account.image, class:'tool') if @account.image.attached? %>
 		</div>
 			<div class="col-8">
-	<h1><%= @account.full_name %><%= link_to 'Edit', edit_account_registration_path, class:'btn' %><i class="fas fa-cog fa-spin fa-sm"></i></h1>
+	<h1><%= @account.full_name %><%= link_to 'Edit', edit_account_registration_path, class:'btn' if can_edit_profile?(@account.id) %>&nbsp;<i class="fas fa-cog fa-spin fa-sm"></i></h1>
 		<div class="profile-stats"><strong><%= @account.posts.count %></strong> posts</div> &nbsp;&nbsp;
 		<div class="profile-stats"><strong><%= @account.total_followers %></strong> followers</div>&nbsp;&nbsp;
 		<div class="profile-stats"><strong><%= @account.total_following %></strong> following</div><br>

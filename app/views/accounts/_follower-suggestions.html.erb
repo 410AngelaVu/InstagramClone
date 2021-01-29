@@ -5,6 +5,10 @@
 	<%= link_to image_tag(account.image, class:'lil-img'), show_path(account.username) unless account.image.blank? %>
 </div>
 <div class="col-9">
+	<%= form_tag follow_account_path, method: :post do %>
+	<%= hidden_field_tag :follow_id, account.id %>
+	<%= submit_tag "Follow", class:'btn btn-info btn-sm float-right' %>
+	<% end %>
 	<%= link_to account.username, show_path(account.username), class:'link-name1 font-weight-bold' unless account.username.blank? %>
 	<p class="text-muted link-name1"><%= account.created_at > 3.days.ago ? "New To Instagram" : "Followed by X users" %></p>
 </div>

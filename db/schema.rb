@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_175412) do
+ActiveRecord::Schema.define(version: 2021_01_28_222648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 2021_01_28_175412) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "followers", force: :cascade do |t|
+    t.bigint "follower_id"
+    t.bigint "following_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follower_id"], name: "index_followers_on_follower_id"
+    t.index ["following_id"], name: "index_followers_on_following_id"
   end
 
   create_table "likes", force: :cascade do |t|
