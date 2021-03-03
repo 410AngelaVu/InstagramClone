@@ -7,11 +7,13 @@
 	<h1><%= @account.full_name %><%= link_to 'Edit', edit_account_registration_path, class:'btn' if can_edit_profile?(@account.id) %>&nbsp;<i class="fas fa-cog fa-spin fa-sm"></i></h1>
 		<div class="profile-stats"><strong><%= @account.posts.count %></strong> posts</div> &nbsp;&nbsp;
 		<div class="profile-stats"><strong><%= @account.total_followers %></strong> followers</div>&nbsp;&nbsp;
-		<div class="profile-stats"><strong><%= @account.total_following %></strong> following</div><br>
-		<strong><p><%= @account.full_name %></p></strong>
-		<p><%= @account.description %></p>
-		<p><%= link_to @account.website if @account.website.present? %></p>
-			</div>
+		<div class="profile-stats"><strong><%= @account.total_following %></strong> following</div><br><br>
+		<div class="user-info">
+		<strong><%= @account.full_name %></strong><br>
+		<%= @account.description %>
+	</div><br>
+		<a href="@account.website"><%= link_to @account.website if @account.website.present? %></a>
+			
 		</div>
 		<div class="row profile-post">
 			
@@ -23,7 +25,8 @@
 			
 		</div>
 	</div>
+</div>
+<br>
 
-
-<%= link_to 'Dashboard', dashboard_path, class:'btn btn-secondary' %>
+<%= link_to 'Create New Post', new_post_path, class:'btn btn-secondary' %>
 <%= link_to 'Log Out', destroy_account_session_path, method: :delete, class:'btn btn-danger' %>

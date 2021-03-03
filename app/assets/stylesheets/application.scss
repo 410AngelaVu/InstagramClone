@@ -64,8 +64,10 @@ nav {
 }
 
 .ti {
-	margin-left: 45px;
+	margin-left: 50%;
 	margin-top: 7%;
+	// position: sticky;
+	float: right;
 }
 
 .follower-suggestion{
@@ -105,4 +107,8 @@ nav {
 .card-header {
 	height: 60px;
     background-color: white;
+}
+
+.input-1 {
+	border: none;
 }

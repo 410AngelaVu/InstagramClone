@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 post "follow/account" => "accounts#follow_account", as: :follow_account
   resources :posts do 
 resources :likes, only: [:create, :destroy]
-resources :comments, only: [:create]
-  end
+end
+
+  resources :comments, only: [:create]
   
  
 end

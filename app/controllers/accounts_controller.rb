@@ -5,6 +5,7 @@ before_action :set_account, only: [:show]
 #user feed(dashboard will be feed)
 def index
 	@posts = Post.all.order('created_at DESC').active
+	@comment = Comment.new
 	# remove users who are add to following from div followers-suggestions
 	following_ids = Follower.where(follower_id: current_account.id ).map(&:following_id)
 	following_ids << current_account.id

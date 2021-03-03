@@ -32,16 +32,21 @@
   <strong><%= link_to post.account.username, show_path(post.account.username), class:'text-dark' %></strong>
   <p class="card-text d-inline mx-2"> <%= post.description %></p>
   <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
+  <%= render "posts/comments", post: post %>
   </div>
   
   <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <%= form_for @comment do |f| %>
+    <%= f.hidden_field :post_id, value: post.id %>
+    <%= f.text_field :content, placeholder:'Add comment here...', class:'input-1' %>
+    <%= f.submit 'Post', class:'btn btn-light float-right' %>
+    <% end %>
   </div>
 </div>
 <% end %>
+
  </div> 
-<div class="col ti">
+<div class="col ti position-fixed">
 	<div class="account-sum">
     <%= image_tag(current_account.image, class:'img-sum') unless current_account.image.blank? %>
 		<p class='p-sum'><strong><%= current_account.username %></strong><br>
